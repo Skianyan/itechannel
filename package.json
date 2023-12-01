@@ -1,22 +1,25 @@
 {
-  "name": "itechannel",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "prisma": "^5.6.0",
-    "tailwindcss": "^3.3.0"
-  }
+	"name": "itechannel",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"next": "14.0.3",
+		"react": "^18",
+		"react-dom": "^18",
+		"next-auth": "^4.0.0",
+		"@prisma/client": "5.6.0",
+		"nodemailer": "^6.9.7"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.0.1",
+		"postcss": "^8",
+		"prisma": "^5.6.0",
+		"tailwindcss": "^3.3.0"
+	}
 }
