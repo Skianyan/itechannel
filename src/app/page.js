@@ -11,7 +11,6 @@ const Main = async () => {
 	};
 	return (
 		<div>
-			<Link href={"/api/auth/signin"}>Sign In</Link>
 			<button onClick={addUser()}>add test</button>
 		</div>
 	);
