@@ -1,17 +1,14 @@
-import Link from "next/link";
+"use client";
 import React from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { FIRESTORE_DB } from "../utils/firebase";
+import Link from "next/link";
+import addUser from "./helpers/addUser";
 
-const Main = async () => {
-	const addUser = async () => {
-		const user = await addDoc(collection(FIRESTORE_DB, "testcoll"), {
-			name: "testname",
-		});
-	};
+const Main = () => {
+
 	return (
-		<div>
-			<button onClick={addUser()}>add test</button>
+		<div className="flex flex-col">
+			<button onClick={addUser}>add test</button>
+			<Link href={"/login"}>log in</Link>
 		</div>
 	);
 };
