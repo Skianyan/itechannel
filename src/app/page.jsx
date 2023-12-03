@@ -11,7 +11,7 @@ import {
 	getDocs,
 	onSnapshot,
 } from "firebase/firestore";
-import { FIRESTORE_DB } from "./firebase";
+import { db } from "./firebase";
 import { useRouter } from "next/navigation";
 
 const Main = () => {
@@ -19,7 +19,7 @@ const Main = () => {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		const collRef = collection(FIRESTORE_DB, "posts");
+		const collRef = collection(db, "posts");
 		const subscriber = onSnapshot(collRef, {
 			next: (snapshot) => {
 				const posts = [];

@@ -3,7 +3,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useState } from "react";
-import { FIRESTORE_DB } from "../firebase";
+import { db } from "../firebase";
 
 export default function Dashboard() {
 	const [title, setTitle] = useState("");
@@ -26,7 +26,7 @@ export default function Dashboard() {
 		let year = dateObj.getUTCFullYear();
 		let newdate = year + "/" + month + "/" + day;
 
-		const user = await addDoc(collection(FIRESTORE_DB, "posts"), {
+		const user = await addDoc(collection(db, "posts"), {
 			createdby: session?.data?.user?.email,
 			date: newdate,
 			title: title,
@@ -77,7 +77,6 @@ export default function Dashboard() {
 					<input
 						className="mb-3 p-2"
 						placeholder="Titulo de el Anuncio"
-						placeholderTextColor={"#cbcbcb"}
 						onChange={(e) => setTitle(e.target.value)}
 						value={title}
 					/>
@@ -87,7 +86,6 @@ export default function Dashboard() {
 					<textarea
 						className="mb-3 pb-10 p-2"
 						placeholder="Cuerpo"
-						placeholderTextColor={"#cbcbcb"}
 						onChange={(e) => setBody(e.target.value)}
 						value={body}
 					/>

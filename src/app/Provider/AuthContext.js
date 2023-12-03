@@ -1,26 +1,47 @@
-// "use client";
-// import React, { createContext, useContext, useEffect, useState } from "react";
-// import { auth } from "firebase/auth";
+"use client";
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	signOut,
+	onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
-// const AuthContext = createContext();
+const AuthContext = createContext();
 
-// export const AuthProvider = ({ children }) => {
-// 	const [user, setUser] = useState(null);
+export const AuthContextProvider = ({ children }) => {
+	const [user, setUser] = useState({});
 
-// 	useEffect(() => {
-// 		const unsubscribe = auth.onAuthStateChanged((user) => {
-// 			setUser(user);
-// 		});
+	const createUser = (email, password) => {
+		return createUserWithEmailAndPassword(auth, email, password);
+	};
 
-// 		// Cleanup subscription on unmount
-// 		return () => unsubscribe();
-// 	}, []);
+	const signIn = (email, password) => {
+		return signInWithEmailAndPassword(auth, email, password);
+	};
 
-// 	return (
-// 		<AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
-// 	);
-// };
+	const logout = () => {
+		return signOut(auth);
+	};
 
-// export const useAuth = () => {
-// 	return useContext(AuthContext);
-// };
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+			console.log(currentUser);
+			setUser(currentUser);
+		});
+		return () => {
+			unsubscribe();
+		};
+	}, []);
+
+	return (
+		<AuthContext.Provider value={{ createUser, user, logout, signIn }}>
+			{children}
+		</AuthContext.Provider>
+	);
+};
+
+export const UserAuth = () => {
+	return useContext(AuthContext);
+};
