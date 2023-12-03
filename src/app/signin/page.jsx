@@ -1,15 +1,39 @@
 "use client";
-import { signIn } from "next-auth/react";
+import { sendSignInLinkToEmail } from "firebase/auth";
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { auth } from "../firebase";
 
 export default function Signin() {
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
 	const router = useRouter();
+
+	const actionCodeSettings = {
+		// URL you want to redirect back to. The domain (www.example.com) for this
+		// URL must be in the authorized domains list in the Firebase Console.
+		url: "http://localhost:3000/signin-confirm",
+		// This must be true.
+		handleCodeInApp: true,
+	};
+
+	const signIn = () => {
+		sendSignInLinkToEmail(auth, email, actionCodeSettings)
+			.then(() => {
+				window.localStorage.setItem("emailForSignIn", email);
+				// ...
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.log(error);
+				// ...
+			});
+	};
+
 	return (
 		<>
-			<div className="bg-slate-800 flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+			<div className="bg-slate-800 h-[100vh] flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<img
 						className="mx-auto h-10 w-auto"
@@ -42,48 +66,10 @@ export default function Signin() {
 								/>
 							</div>
 						</div>
-
-						<div>
-							<div className="flex items-center justify-between">
-								<label
-									htmlFor="password"
-									className="block text-sm font-medium leading-6 text-white"
-								>
-									Password
-								</label>
-								<div className="text-sm">
-									<div
-										onClick={() => router.push("/forgot-password")}
-										className="cursor-pointer font-semibold text-indigo-400 hover:text-indigo-300"
-									>
-										Forgot password?
-									</div>
-								</div>
-							</div>
-							<div className="mt-2">
-								<input
-									id="password"
-									name="password"
-									type="password"
-									autoComplete="current-password"
-									onChange={(e) => setPassword(e.target.value)}
-									required
-									className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-								/>
-							</div>
-						</div>
-
 						<div>
 							<button
-								onClick={() =>
-									signIn("credentials", {
-										email,
-										password,
-										redirect: true,
-										callbackUrl: "/",
-									})
-								}
-								disabled={!email || !password}
+								onClick={() => signIn()}
+								disabled={!email}
 								className="disabled:opacity-40 flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 							>
 								Sign in

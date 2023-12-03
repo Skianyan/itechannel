@@ -54,9 +54,9 @@ const Main = () => {
 					{posts.map((post) => {
 						return (
 							<div key={post.id} className="m-5">
-								<div>Body: {post.title}</div>
+								<div>Title: {post.title}</div>
 								<div>Body: {post.body}</div>
-								<div>Body: {post.extrainfo}</div>
+								<div>ExtraInfo: {post.extrainfo}</div>
 							</div>
 						);
 					})}
