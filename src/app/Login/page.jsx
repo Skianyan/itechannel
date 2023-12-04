@@ -6,11 +6,11 @@ const LoginPage = () => {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center bg-slate-950 text-white font-serif h-screen'>
+    <div className='flex flex-col justify-start items-center bg-slate-950 text-white font-serif min-h-screen '>
 
-      <div className='text-3xl font-serif mb-4 p-8'>Inicio de Sesión</div>
+      <div className='text-3xl font-serif mt-44 mb-4 p-8'>Inicio de Sesión</div>
 
-      <div className='bg-white text-black p-6 rounded-md w-full max-w-md '>
+      <div className='bg-white text-black p-6 rounded-md lg:w-[34%] md:w-88 sm:w-77 mt-5'>
         <input 
           type="text" 
           placeholder='Introduce tu email'
@@ -19,7 +19,7 @@ const LoginPage = () => {
 
         <button 
           className='p-2 bg-black text-white rounded-md w-full'
-          onClick={login}
+          // onClick={login}
         >
           Ingresar
         </button>
