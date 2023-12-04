@@ -5,7 +5,7 @@ const ContInfo = () => {
   return (
     <div className='w-full flex-col  lg:flex bg-gray-800 text-white h-screen  '>
  
-   <div className='bg-white mt-9 h-[22%] m-5 '>ggg 
+   <div className='bg-white mt-9 h-[22%] m-5 '>
    
    </div>
 
