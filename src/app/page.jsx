@@ -19,17 +19,12 @@ import ContInfo from "./components/ContInfo";
 
 const Main = () => {
 	const [posts, setPosts] = useState([]);
-	const targetCategory = "Eventos";
 
 	useEffect(() => {
 		const collRef = collection(db, "posts");
 
 		const subscriber = onSnapshot(
-			query(
-				collRef,
-				orderBy("date", "asc"),
-				where("category", "==", targetCategory)
-			), // 'desc' for descending order, use 'asc' for ascending
+			query(collRef, orderBy("date", "asc")), // 'desc' for descending order, use 'asc' for ascending
 			{
 				next: (snapshot) => {
 					const posts = [];
