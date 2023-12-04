@@ -54,6 +54,6 @@ Firebase
 
 - npm i prisma -D
 - npm i next-auth @next-auth/prisma-adapter
-- npm i nodemailer
+- npm install firebase@10.7.0 --save
 
 ## Instrucciones de instalación:
