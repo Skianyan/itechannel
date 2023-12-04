@@ -13,7 +13,13 @@ const ContInfo = () => {
 
    <div className='bg-gray-700 mt-3 h-[59%] m-5 justify-center text-center '>
     <div className='m-5 font-serif font-bold  text-2xl '>Ite-Informamos </div>
-    <div className='m-5'>Descripccion </div>
+    <div className='m-5 font-serif font-bold'>Por Alumnos para Alumnos </div>
+    
+    <ul className='m-4 font-serif'>
+<p>Este contenido es Official,libre de publicidad. Se creo con el fin de Informar a la comunidad educativa</p>
+    </ul>
+
+    <ul className=' m-4'>Creado por ingenieros en sistemas Computacionales 4SA.</ul>
     </div>
   </div>
   )

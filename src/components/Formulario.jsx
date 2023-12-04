@@ -2,12 +2,12 @@ import React from 'react';
 
 const Formulario = () => {
   return (
-    <div className='w-full flex-col lg:flex bg-gray-800 text-white h-screen'>
-      <div className='bg-white mt-9 h-[22%] m-5 '></div>
+    <div className='w-full max-w-md flex-col lg:flex text-white flex justify-center items-center mx-auto'>
 
-      <div className='bg-gray-700 mt-3 h-[59%] m-5 flex justify-center items-center'>
+      <div className='bg-gray-700 m-4 w-full'>
+        
         <div className='m-5'>
-          <form className='text-left max-w-md mx-auto'>
+          <form className='text-left'>
             <div className='mb-4'>
               <label htmlFor='postTitle' className='block text-sm font-bold mb-2 text-white'>
                 Post Title:
