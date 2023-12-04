@@ -1,10 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 
-const ContFotos = () => {
+function ContFotos1() {
   return (
     <div className='w-full flex-col  lg:flex bg-gray-800 text-white h-screen  '>
-    <div className='bg-white mt-9 h-[6%] m-5  text-black  justify-center text-center p-1 font-serif font-semibold text-2xl'> Deportes
+    <div className='bg-white mt-9 h-[6%] m-5  text-black  justify-center text-center p-1 font-serif font-semibold text-2xl'> Eventos
     
     </div>
  
@@ -18,4 +17,4 @@ const ContFotos = () => {
   )
 }
 
-export default ContFotos
+export default ContFotos1
