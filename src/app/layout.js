@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import SessionProvider from "./Provider/SessionProvider";
 import { AuthContextProvider } from "./Provider/AuthContext";
 import { CategoriesProvider } from "./Provider/CategoriesContext";
+import Menu from "./components/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({ children }) {
 				<AuthContextProvider>
 					<SessionProvider>
 						<CategoriesProvider>
-							<NavBar />
+							<Menu />
 							{children}
 						</CategoriesProvider>
 					</SessionProvider>

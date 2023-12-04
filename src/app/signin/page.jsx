@@ -36,7 +36,7 @@ export default function Signin() {
 			<div className="bg-slate-800 h-[100vh] flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-						Sign in to your account
+						Iniciar Sesión
 					</h2>
 				</div>
 
@@ -47,7 +47,7 @@ export default function Signin() {
 								htmlFor="email"
 								className="block text-sm font-medium leading-6 text-white"
 							>
-								Email address
+								Correo
 							</label>
 							<div className="mt-2">
 								<input
@@ -67,12 +67,12 @@ export default function Signin() {
 								disabled={!email}
 								className="disabled:opacity-40 flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 							>
-								Sign in
+								Iniciar Sesión
 							</button>
 						</div>
 					</div>
 
-					<p className="mt-10 text-center text-sm text-gray-400">
+					{/* <p className="mt-10 text-center text-sm text-gray-400">
 						Not a member?{" "}
 						<button
 							onClick={() => router.push("signup")}
@@ -80,7 +80,7 @@ export default function Signin() {
 						>
 							Sign Up
 						</button>
-					</p>
+					</p> */}
 				</div>
 			</div>
 		</>
