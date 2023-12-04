@@ -7,9 +7,9 @@ import React from "react";
 
 const PostsCard = ({ posts }) => {
 	return (
-		<div className="w">
+		<div>
 			{posts.length > 0 ? (
-				<div className=" w-[50vw] ">
+				<div className="ml-5  lg:w-[70vw] w-[90vw]">
 					{posts.map((post) => {
 						return (
 							<div key={post.id} className="bg-slate-500 p-5 rounded-lg m-4">
