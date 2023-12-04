@@ -51,7 +51,7 @@ const Menu = () => {
 								
 								
 							</li>
-                            <li className="space-x-2 flex text-aling font-bold">secciones </li>
+                            <li className="space-x-2 flex text-aling font-bold">Secciones </li>
 
 							<li className="space-x-2 flex">
 							
@@ -72,7 +72,7 @@ const Menu = () => {
 
                             <li>
                             <div>
-									<Link href={"/"}><HomeIcon /></Link>
+									<Link href={"/"}><HomeIcon /> Home</Link>
 								</div>
                             </li>
 							
