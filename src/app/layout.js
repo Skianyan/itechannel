@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import SessionProvider from "./Provider/SessionProvider";
 import { AuthContextProvider } from "./Provider/AuthContext";
+import { CategoriesProvider } from "./Provider/CategoriesContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,10 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<AuthContextProvider>
 					<SessionProvider>
-						<NavBar />
-						{children}
+						<CategoriesProvider>
+							<NavBar />
+							{children}
+						</CategoriesProvider>
 					</SessionProvider>
 				</AuthContextProvider>
 			</body>
