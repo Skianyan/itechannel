@@ -71,42 +71,77 @@ export default function Dashboard() {
   };
   //<div className="">{session?.data?.user?.email}</div>
   return (
-    <div className="flex flex-col lg:flex-row items-stretch justify-between">
-      <div className="w-full flex flex-col bg-slate-400 text-white h-[95vh]  text-center justify-center">
-        <div>Registrar nuevo post</div>
-        <div className="flex flex-col self-center w-80 m-4">
-          <div>Titulo del Anuncio</div>
+    <div className="w-full max-w-md flex-col lg:flex text-white flex justify-center items-center mx-auto">
+      <div className="bg-gray-700 m-4 w-full">
+        <div className="m-5">
+          <form className="text-left">
+            <div className="mb-4">
+              <div>Registrar nuevo post</div>
 
-          <input
-            className="mb-3 p-2"
-            placeholder="Titulo de el Anuncio"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-          {!isValid.title && <div>Favor de ingresar un titulo valido</div>}
-
-          <div>Cuerpo del Anuncio</div>
-          <textarea
-            className="mb-3 pb-10 p-2"
-            placeholder="Cuerpo"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-          />
-          {!isValid.body && <div>Favor de ingresar texto valido</div>}
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center mb-4">
-              <Dropdown category={category} setCategory={setCategory} />
+              <label
+                htmlFor="postTitle"
+                className="block text-sm font-bold mb-2 text-white"
+              >
+                Titulo del post
+              </label>
+              <input
+                type="text"
+                id="postTitle"
+                name="postTitle"
+                placeholder="Enter Post Title"
+                className="w-full p-2 border rounded text-black"
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+              />
+              {!isValid.title && <div>Favor de ingresar un titulo valido</div>}
             </div>
-            <p>{category}</p>
-          </div>
-          <button
-            className="bg-red-300 p-3 rounded-lg disabled:bg-red-600"
-            onClick={validateForm}
-            title="Add Post"
-            disabled={title === "" && body === ""}
-          >
-            Add Post
-          </button>
+
+            <div className="mb-4">
+              <label
+                htmlFor="category"
+                className="block text-sm font-bold mb-2 text-white"
+              >
+                Categoria
+              </label>
+              <div
+                id="category"
+                name="category"
+                className="w-full p-2 border rounded text-black"
+              >
+                <Dropdown category={category} setCategory={setCategory} />
+              </div>
+              <p>{category}</p>
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="postDescription"
+                className="block text-sm font-bold mb-2 text-white"
+              >
+                Contenido del post
+              </label>
+              <textarea
+                id="postDescription"
+                name="postDescription"
+                placeholder="Enter Post Description"
+                className="w-full p-2 border rounded text-black"
+                style={{ resize: "none" }}
+                onChange={(e) => setBody(e.target.value)}
+                value={body}
+              ></textarea>
+              {!isValid.body && <div>Favor de ingresar texto valido</div>}
+            </div>
+
+            <button
+              type="submit"
+              className="bg-gray-500 text-white p-2 rounded hover:bg-gray-900"
+              onClick={validateForm}
+              title="Add Post"
+              disabled={title === "" && body === ""}
+            >
+              Añadir post
+            </button>
+          </form>
         </div>
       </div>
     </div>
