@@ -9,7 +9,7 @@ const PostsCard = ({ posts }) => {
 	return (
 		<div>
 			{posts.length > 0 ? (
-				<div className="lg:w-full w-[100vw]">
+				<div className="lg:w-full w-[95vw]">
 					{posts.map((post) => {
 						return (
 							<div key={post.id} className="bg-slate-500 p-5 rounded-lg m-4">
