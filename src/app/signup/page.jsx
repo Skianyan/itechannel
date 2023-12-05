@@ -14,6 +14,7 @@ export default function Signup() {
 			"ricardo@haroware.com",
 			"alc17760295@ite.edu.mx",
 			"skianyan@gmail.com",
+			"al20760365@ite.edu.mx",
 		];
 
 		// Basic email regex
@@ -23,8 +24,9 @@ export default function Signup() {
 			return;
 		}
 		// Validate if email is in list of approved emails
-		if (approvedEmails.includes(email)) {
-			alert("Registration successful!");
+		if (!approvedEmails.includes(email)) {
+			alert("Email not valid!");
+			return;
 			// Additional registration logic can be added here
 		}
 		// Validate password length
