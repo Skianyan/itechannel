@@ -71,10 +71,10 @@ export default function Dashboard() {
 	};
 	//<div className="">{session?.data?.user?.email}</div>
 	return (
-		<div className="h-[100vh] w-[85vw] ml-[15%] flex flex-col bg-red-100 justify-center">
-			<div className="bg-slate-500 p-4 flex flex-col self-center items-center w-96 rounded-lg ">
+		<div className="flex flex-col lg:flex-row items-stretch justify-between">
+			<div className="w-full flex flex-col bg-slate-400 text-white h-[95vh]  text-center justify-center">
 				<div>Registrar nuevo post</div>
-				<div className="flex flex-col w-80">
+				<div className="flex flex-col self-center w-80 m-4">
 					<div>Titulo del Anuncio</div>
 
 					<input

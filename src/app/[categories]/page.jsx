@@ -13,13 +13,13 @@ import {
 	orderBy,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import PostsCard from "../components/PostsCard";
 import ContInfo from "../components/ContInfo";
 
-const page = () => {
+const page = ({ params: { categories } }) => {
 	const [posts, setPosts] = useState([]);
-	const targetCategory = "Eventos";
+	const targetCategory = categories;
 
 	useEffect(() => {
 		const collRef = collection(db, "posts");
@@ -40,7 +40,7 @@ const page = () => {
 						});
 					});
 					setPosts(posts);
-					//console.log(users);
+					console.log();
 				},
 			}
 		);
