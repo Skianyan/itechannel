@@ -9,12 +9,24 @@ export default function Signup() {
 	const [passwordAgain, setPasswordAgain] = useState("");
 
 	const signup = async () => {
+		// List of Emails that can sign up
+		const approvedEmails = [
+			"ricardo@haroware.com",
+			"alc17760295@ite.edu.mx",
+			"skianyan@gmail.com",
+		];
+
+		// Basic email regex
 		var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRegex.test(email)) {
 			alert("Invalid email format");
 			return;
 		}
-
+		// Validate if email is in list of approved emails
+		if (approvedEmails.includes(email)) {
+			alert("Registration successful!");
+			// Additional registration logic can be added here
+		}
 		// Validate password length
 		if (password.length < 6) {
 			alert("Password must be at least 6 characters long");

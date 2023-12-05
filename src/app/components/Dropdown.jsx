@@ -28,7 +28,7 @@ const Dropdown = ({ category, setCategory }) => {
 						return (
 							<button
 								key={index}
-								className="flex flex-col bg-slate-200 p-2"
+								className="flex flex-col text-slate-600 p-2"
 								onClick={() => handleItemClick(cat)}
 							>
 								{cat}
