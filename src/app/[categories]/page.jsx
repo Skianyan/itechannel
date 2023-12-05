@@ -27,8 +27,9 @@ const page = ({ params: { categories } }) => {
 		const subscriber = onSnapshot(
 			query(
 				collRef,
-				orderBy("date", "asc"),
-				where("category", "==", targetCategory)
+
+				where("category", "==", targetCategory),
+				orderBy("date", "desc")
 			), // 'desc' for descending order, use 'asc' for ascending
 			{
 				next: (snapshot) => {

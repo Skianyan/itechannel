@@ -23,7 +23,7 @@ const PostsCard = ({ posts }) => {
 				</div>
 			) : (
 				<div>
-					<div>No se encuentran anuncios nuevos</div>
+					<div>Cargando...</div>
 				</div>
 			)}
 		</div>

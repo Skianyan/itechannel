@@ -55,7 +55,10 @@ const Menu = () => {
 							<li className="space-x-2 flex "></li>
 							<li>
 								<div>
-									<Link href={"/"}>
+									<Link
+										href={"/"}
+										onClick={() => setIsShowing((isShowing) => !isShowing)}
+									>
 										<HomeIcon /> Home
 									</Link>
 								</div>

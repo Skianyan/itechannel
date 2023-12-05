@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
 				<AuthContextProvider>
 					<SessionProvider>
 						<CategoriesProvider>
-							<Menu />
+							<div className="lg:hidden flex">
+								<Menu />
+							</div>
 							{children}
 						</CategoriesProvider>
 					</SessionProvider>
