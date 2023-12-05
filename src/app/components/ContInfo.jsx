@@ -11,17 +11,17 @@ const ContInfo = () => {
 			</div>
 
 			<div className="bg-[#56242A] mt-3 h-[59%] m-5 justify-center text-center rounded-lg mr-24 ">
-				<div className="m-5 font-serif font-bold  text-2xl ">
-					Ite-Informamos{" "}
+				<div className="m-5 font-bold  text-2xl ">
+					"Ite-Informamos"{" "}
 				</div>
-				<div className="m-5 font-serif font-bold">
-					Por Alumnos para Alumnos{" "}
+				<div className="m-5">
+					¡Por Alumnos para Alumnos!{" "}
 				</div>
 
-				<ul className="m-4 font-serif">
+				<ul className="m-4">
 					<p>
-						Este contenido es Official,libre de publicidad. Se creo con el fin
-						de Informar a la comunidad educativa
+						Este contenido es Official, libre de publicidad. Se creo con el fin
+						de informar a la comunidad educativa
 					</p>
 				</ul>
 

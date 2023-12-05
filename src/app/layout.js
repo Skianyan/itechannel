@@ -1,12 +1,14 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+// RootLayout.js
+
+import { Montserrat } from "next/font/google";
+import "./globals.css"; // Importa tus estilos globales
 import NavBar from "./components/NavBar";
 import SessionProvider from "./Provider/SessionProvider";
 import { AuthContextProvider } from "./Provider/AuthContext";
 import { CategoriesProvider } from "./Provider/CategoriesContext";
 import Menu from "./components/Menu";
 
-const inter = Inter({ subsets: ["latin"] });
+const monsterrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "ITEChannel",
@@ -16,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={monsterrat.className}>
         <AuthContextProvider>
           <SessionProvider>
             <CategoriesProvider>
