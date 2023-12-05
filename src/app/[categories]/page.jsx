@@ -54,7 +54,7 @@ const page = ({ params: { categories } }) => {
 					Ite-Informamos{" "}
 				</div>
 				<div className="mt-4">Anuncios Generales</div>
-				<div className="">
+				<div className="overflow-auto h-[90vh] ">
 					<PostsCard posts={posts}></PostsCard>
 				</div>
 			</div>

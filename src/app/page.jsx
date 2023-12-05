@@ -44,13 +44,13 @@ const Main = () => {
 
 	return (
 		<div className="flex flex-col lg:flex-row items-stretch justify-between">
-			<div className="w-full lg:w-3/4 flex flex-col bg-slate-400 text-white h-[95vh]  text-center ">
-				<div className="font-bold font-serif text-2xl mt-5 lg:hidden  ">
+			<div className="w-full lg:w-3/4 h-full flex flex-col bg-slate-400 text-white text-center ">
+				<div className="font-bold font-serif text-2xl mt-5 lg:hidden">
 					{" "}
 					Ite-Informamos{" "}
 				</div>
 				<div className="mt-4">Anuncios Generales</div>
-				<div className="">
+				<div className="overflow-auto h-[90vh]">
 					<PostsCard posts={posts}></PostsCard>
 				</div>
 			</div>
