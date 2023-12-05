@@ -26,13 +26,14 @@ const NavBar = () => {
 					})}
 				</ul>
 				{session ? (
-					<ul className="flex flex-col h-full items-center justify-end space-y-3 mb-4">
-						<li>{session.user.email}</li>
-						<li className="bg-red-300 h-14 w-32 rounded-lg self-center text-center p-4">
+					<ul className="flex flex-col ml-[5vw] h-full justify-end mb-4">
+						<li>Usuario:</li>
+						<li className="mb-3">{session.user.email}</li>
+						<li className="bg-red-300 h-14 w-32 rounded-lg text-center mb-3 p-4">
 							<Link href="/dashboard">Dashboard</Link>
 						</li>
 						<button
-							className="bg-red-300 h-14 w-32 rounded-lg self-center"
+							className="bg-red-300 h-14 w-32 rounded-lg"
 							onClick={() => signOut()}
 						>
 							Logout
