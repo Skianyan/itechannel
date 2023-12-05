@@ -43,15 +43,15 @@ const Menu = () => {
 
 				<Transition
 					show={isShowing}
-					enter="transition-opacity duration-75"
+					enter="transition-opacity duration-150"
 					enterFrom="opacity-0"
 					enterTo="opacity-100"
 					leave="transition-opacity duration-150"
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0"
 				>
-					<Popover.Panel className="bg-slate-900 absolute w-48 h-[95vh] rounded-lg p-4 mt-2">
-						<ul className="text-white space-y-5 h-full flex flex-col justify-center">
+					<Popover.Panel className="bg-[#56242A] absolute w-[70vw] h-[95vh] rounded-lg p-6">
+						<ul className="text-white space-y-5 h-full w-[50%] flex flex-col justify-center">
 							<li className="space-x-2 flex "></li>
 							<li>
 								<div>
@@ -63,10 +63,8 @@ const Menu = () => {
 									</Link>
 								</div>
 							</li>
-							<li className="space-x-2 flex text-aling font-bold">
-								Secciones{" "}
-							</li>
-
+							<li className="space-x-2 flex text-aling font-bold">Secciones</li>
+							<hr className="mt-5 w-40" />
 							{categoryList.map((cat, index) => {
 								const categoryUrl = `/${encodeURIComponent(cat)}`; // Encode the category name
 								return (
@@ -76,20 +74,21 @@ const Menu = () => {
 								);
 							})}
 							{session ? (
-								<ul className="flex flex-col h-full items-center justify-end space-y-3 mb-4">
-									<li>{session.user.email}</li>
-									<li className="bg-red-300 h-14 w-32 rounded-lg self-center text-center p-4">
+								<ul className="flex flex-col h-full justify-end mb-4">
+									<li>Usuario:</li>
+									<li className="mb-3">{session.user.email}</li>
+									<li className="bg-red-300 h-14 w-32 mb-3 rounded-lg  text-center p-4">
 										<Link href="/dashboard">Dashboard</Link>
 									</li>
 									<button
-										className="bg-red-300 h-14 w-32 rounded-lg self-center"
+										className="bg-red-300 mb-3 h-14 w-32 rounded-lg font"
 										onClick={() => signOut()}
 									>
 										Logout
 									</button>
 								</ul>
 							) : (
-								<ul className="flex flex-col h-full items-center justify-end space-y-3 mb-4">
+								<ul className="flex flex-col h-full justify-end space-y-3 mb-4">
 									<Link href="/signin">Login</Link>
 								</ul>
 							)}
