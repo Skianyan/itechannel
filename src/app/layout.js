@@ -9,28 +9,28 @@ import Menu from "./components/Menu";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "ITEChannel",
-	description: "Foro de noticias para alumnos del ITE",
+  title: "ITEChannel",
+  description: "Foro de noticias para alumnos del ITE",
 };
 
 export default function RootLayout({ children }) {
-	return (
-		<html lang="en">
-			<body className={inter.className}>
-				<AuthContextProvider>
-					<SessionProvider>
-						<CategoriesProvider>
-							<div className="lg:hidden flex">
-								<Menu />
-							</div>
-							<div className="lg:flex hidden">
-								<NavBar />
-							</div>
-							{children}
-						</CategoriesProvider>
-					</SessionProvider>
-				</AuthContextProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <AuthContextProvider>
+          <SessionProvider>
+            <CategoriesProvider>
+              <div className="lg:hidden flex">
+                <Menu />
+              </div>
+              <div className="lg:flex hidden">
+                <NavBar />
+              </div>
+              {children}
+            </CategoriesProvider>
+          </SessionProvider>
+        </AuthContextProvider>
+      </body>
+    </html>
+  );
 }

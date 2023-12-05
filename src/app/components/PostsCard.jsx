@@ -12,7 +12,7 @@ const PostsCard = ({ posts }) => {
 				<div className="lg:w-full w-[95vw]">
 					{posts.map((post) => {
 						return (
-							<div key={post.id} className="bg-slate-500 p-5 rounded-lg m-4">
+							<div key={post.id} className="bg-[#285C4D] p-5 rounded-lg m-4">
 								<div>Title: {post.title}</div>
 								<div>Body: {post.body}</div>
 								<div>Date: {post.date}</div>

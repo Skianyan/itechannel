@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const ContInfo = () => {
 	return (
-		<div className="w-full flex-col lg:flex bg-gray-800 text-white h-full ">
+		<div className="w-full flex-col lg:flex bg-[#D4C19C] text-white h-full ">
 			<div className="bg-white mt-9 h-[25%] m-5  rounded-lg mr-24 ">
 				<div className="w-full h-full flex items-center justify-center">
-					<Image src="/favicon.ico" width={210} height={100} alt="logo" />
+					<Image src="" width={210} height={100} alt="logo" />
 				</div>
 			</div>
 
-			<div className="bg-gray-700 mt-3 h-[59%] m-5 justify-center text-center rounded-lg mr-24 ">
+			<div className="bg-[#56242A] mt-3 h-[59%] m-5 justify-center text-center rounded-lg mr-24 ">
 				<div className="m-5 font-serif font-bold  text-2xl ">
 					Ite-Informamos{" "}
 				</div>

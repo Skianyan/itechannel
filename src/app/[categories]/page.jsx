@@ -49,12 +49,12 @@ const page = ({ params: { categories } }) => {
 	}, []);
 	return (
 		<div className="flex flex-col lg:flex-row items-stretch justify-between">
-			<div className="w-full lg:ml-[20vw] lg:h-[100vh] lg:w-50 h-full flex flex-col bg-slate-400 text-white text-center">
+			<div className="w-full lg:ml-[20vw] lg:h-[100vh] lg:w-50 h-full flex flex-col bg-[#f8f9fa] text-white text-center">
 				<div className="font-bold font-serif text-2xl mt-5 lg:hidden  ">
 					{" "}
 					Ite-Informamos{" "}
 				</div>
-				<div className="mt-4">{targetCategory}</div>
+				<div className="mt-4 text-black">{targetCategory}</div>
 				<div className="overflow-auto h-[100vh] ">
 					<PostsCard posts={posts}></PostsCard>
 				</div>

@@ -10,7 +10,7 @@ const NavBar = () => {
 	const { categoryList, updateCategories } = useCategories();
 
 	return (
-		<div className="bg-slate-700 absolute w-[20%] h-[100%]">
+		<div className="bg-[#56242A] absolute w-[20%] h-[100%] text-white">
 			<ul className="flex flex-col items-center h-full">
 				<ul className="mt-10 space-y-4">
 					<li>
