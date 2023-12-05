@@ -23,6 +23,9 @@ export default function RootLayout({ children }) {
 							<div className="lg:hidden flex">
 								<Menu />
 							</div>
+							<div className="lg:flex hidden">
+								<NavBar />
+							</div>
 							{children}
 						</CategoriesProvider>
 					</SessionProvider>
