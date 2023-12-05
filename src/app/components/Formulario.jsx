@@ -50,9 +50,10 @@ const Formulario = () => {
                 name="category"
                 className="w-full p-2 border rounded text-black"
               >
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
-                <option value="category3">Category 3</option>
+                <option value="category1">Anuncios</option>
+                <option value="category2">Actividades</option>
+                <option value="category3">Eventos</option>
+                <option value="category4">Novedades</option>
               </select>
             </div>
 
