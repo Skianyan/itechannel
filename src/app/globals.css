@@ -16,3 +16,17 @@
 		}
 	}
 }
+.custom-scrollbar {
+	max-height: fit-content; /* Set a max height for your container */
+	overflow-y: auto;
+	scrollbar-width: thin; /* Firefox */
+	scrollbar-color: #4a5568 #2d3748; /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 8px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #2d3748; /* Set the color of the scrollbar thumb */
+}

@@ -55,7 +55,7 @@ const page = ({ params: { categories } }) => {
 					Ite-Informamos{" "}
 				</div>
 				<div className="mt-4 text-black">{targetCategory}</div>
-				<div className="overflow-auto h-[100vh] ">
+				<div className="h-[100vh] custom-scrollbar">
 					<PostsCard posts={posts}></PostsCard>
 				</div>
 			</div>

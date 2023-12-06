@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import HomeIcon from "@mui/icons-material/Home";
 import { useCategories } from "../Provider/CategoriesContext";
 import { signOut, useSession } from "next-auth/react";
 import { auth } from "../firebase";
@@ -13,9 +14,16 @@ const NavBar = () => {
 		<div className="bg-[#56242A] absolute w-[20%] h-[100%] text-white">
 			<ul className="flex flex-col items-center h-full">
 				<ul className="mt-10 space-y-4">
-					<li>
-						<Link href="/">Home</Link>
+					<li className="flex">
+						<div className=" mr-2">
+							<HomeIcon />
+						</div>
+						<div>
+							<Link href="/">Home</Link>
+						</div>
 					</li>
+					<li className="space-x-2 flex text-aling font-bold">Secciones</li>
+					<hr className="mt-5 w-40" />
 					{categoryList.map((cat, index) => {
 						const categoryUrl = `/${encodeURIComponent(cat)}`; // Encode the category name
 						return (
