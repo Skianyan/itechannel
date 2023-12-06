@@ -53,7 +53,7 @@ const NavBar = () => {
 						</button>
 					</ul>
 				) : (
-					<ul className="h-full flex justify-end place-items-end">
+					<ul className="h-full flex justify-end place-items-end mb-4">
 						<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg text-center items-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
 							<Link href="/signin">Login</Link>
 						</li>

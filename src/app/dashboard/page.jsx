@@ -72,7 +72,7 @@ export default function Dashboard() {
 	//<div className="">{session?.data?.user?.email}</div>
 	return (
 		<div className="flex flex-col lg:flex-row items-stretch justify-between">
-			<div className="w-full flex flex-col bg-[#f8f9fa] text-white lg:h-[100vh] h-[95vh]  text-center justify-center">
+			<div className="w-full flex flex-col lg:ml-[20vw] bg-[#f8f9fa] text-white lg:h-[100vh] h-[95vh]  text-center justify-center">
 				<div className="bg-[#56242A] self-center justify-center p-4 rounded-lg">
 					<div>Registrar nuevo Anuncio</div>
 					<div className="flex flex-col self-center w-80 m-4">
@@ -94,19 +94,19 @@ export default function Dashboard() {
 							value={body}
 						/>
 						{!isValid.body && <div>Favor de ingresar texto valido</div>}
-						<div className="flex items-center space-x-6">
-							<div className="flex items-center mb-4">
+						<div className="flex justify-items-center items-center space-x-6">
+							<div className="mb-4">
 								<Dropdown category={category} setCategory={setCategory} />
 							</div>
-							<p>{category}</p>
+							<p className="mb-4">{category}</p>
 						</div>
 						<button
-							className="bg-red-300 p-3 rounded-lg disabled:bg-red-600"
+							className="bg-[#9D2449] p-3 rounded-lg disabled:bg-red-400 transition-colors duration-300 hover:bg-[#B38E5D]"
 							onClick={validateForm}
 							title="Add Post"
 							disabled={title === "" && body === ""}
 						>
-							Add Post
+							Agregar Anuncio
 						</button>
 					</div>
 				</div>

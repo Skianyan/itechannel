@@ -28,7 +28,7 @@ const Dropdown = ({ category, setCategory }) => {
 						return (
 							<button
 								key={index}
-								className="flex flex-col text-slate-600 p-2"
+								className="flex w-full flex-col text-slate-600 p-2 transition-colors duration-300 hover:bg-[#B38E5D] rounded-lg hover:underline"
 								onClick={() => handleItemClick(cat)}
 							>
 								{cat}
