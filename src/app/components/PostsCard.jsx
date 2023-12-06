@@ -7,26 +7,26 @@ import React from "react";
 
 const PostsCard = ({ posts }) => {
 	return (
-		<div className="">
+		<div>
 			{posts.length > 0 ? (
 				<div className="lg:w-full w-[95vw] flex flex-col justify-center items-center">
 					{posts.map((post) => {
 						return (
 							<div
 								key={post.id}
-								className="bg-[#285C4D] p-5 rounded-lg m-4 lg:w-[40vw] w-[80vw] shadow-md transition-shadow duration-300 hover:shadow-lg"
+								className="bg-[#285C4D] p-6 rounded-lg m-4 w-[40vw] "
 							>
-								<div>Title: {post.title}</div>
-								<div>Body: {post.body}</div>
-								<div>Date: {post.date}</div>
-								<div>Category: {post.category}</div>
+								<div className=" text-right m-0 text-sm font-mono mb-1">{post.date}</div>
+								<div className=" text-left font-bold mb-2">{post.title}</div>
+								<div className=" text-left font-thin mb-2">{post.body}</div>
+								
 							</div>
 						);
 					})}
 				</div>
 			) : (
 				<div>
-					<div className="mt-20 text-[#706f6f] font-semibold">Cargando...</div>
+					<div>Cargando...</div>
 				</div>
 			)}
 		</div>
