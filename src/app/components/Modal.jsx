@@ -15,10 +15,9 @@ const Modal = ({ data }) => {
             <p className="text-lg text-gray-500">{body}</p>
           </div>
           <div className="flex justify-center mt-4">
-            {/* Using useRouter to dismiss modal*/}
             <button
               onClick={router.back}
-              className="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              className="px-4 py-2 bg-[#56242A] text-white text-base font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
             >
               Cerrar
             </button>
