@@ -45,11 +45,13 @@ const Main = () => {
 	return (
 		<div className="flex flex-col lg:flex-row items-stretch justify-between">
 			<div className="w-full lg:ml-[20vw] lg:h-[100vh] lg:w-50 h-full flex flex-col bg-[#f8f9fa] text-white text-center">
-				<div className="font-bold font-serif text-2xl mt-5 text-black lg:hidden">
+				<div className="font-bold font-serif text-2xl mt-5 text-[#706f6f] lg:hidden">
 					{" "}
 					Ite-Informamos{" "}
 				</div>
-				<div className="mt-4 text-black">Anuncios Generales</div>
+				<div className="mt-10 mb-6 text-[#706f6f] font-semibold text-xl">
+					Anuncios Generales
+				</div>
 				<div className="h-[100vh] custom-scrollbar">
 					<PostsCard posts={posts}></PostsCard>
 				</div>

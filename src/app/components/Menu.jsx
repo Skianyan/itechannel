@@ -20,9 +20,9 @@ const Menu = () => {
 	const { data: session, status } = useSession();
 	const { categoryList, updateCategories } = useCategories();
 	return (
-		<header className="sm:w-[25%]  p-2  ">
+		<header className=" bg-[#D4C19C] w-full  p-2  ">
 			{/* Responsive Menu */}
-			<Popover className="">
+			<Popover className="select-none">
 				<Popover.Button onClick={() => setIsShowing((isShowing) => !isShowing)}>
 					{isActive ? (
 						<MenuIcon
@@ -50,7 +50,7 @@ const Menu = () => {
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0"
 				>
-					<Popover.Panel className="bg-[#56242A] absolute w-[70vw] h-[95vh] rounded-lg p-6">
+					<Popover.Panel className="bg-[#56242A] absolute w-[70vw] h-[95vh] rounded-lg p-6 z-50">
 						<ul className="text-white space-y-5 h-full w-[50%] flex flex-col justify-center">
 							<li className="space-x-2 flex "></li>
 							<li>
@@ -77,19 +77,21 @@ const Menu = () => {
 								<ul className="flex flex-col h-full justify-end mb-4">
 									<li>Usuario:</li>
 									<li className="mb-3">{session.user.email}</li>
-									<li className="bg-red-300 h-14 w-32 mb-3 rounded-lg  text-center p-4">
+									<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg  text-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
 										<Link href="/dashboard">Dashboard</Link>
 									</li>
 									<button
-										className="bg-red-300 mb-3 h-14 w-32 rounded-lg font"
+										className="bg-[#9D2449] mb-3 h-14 w-32 rounded-lg transition-colors duration-300 hover:bg-[#B38E5D]"
 										onClick={() => signOut()}
 									>
 										Logout
 									</button>
 								</ul>
 							) : (
-								<ul className="flex flex-col h-full justify-end space-y-3 mb-4">
-									<Link href="/signin">Login</Link>
+								<ul className="h-full flex justify-end place-items-end">
+									<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg text-center items-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
+										<Link href="/signin">Login</Link>
+									</li>
 								</ul>
 							)}
 						</ul>

@@ -14,7 +14,7 @@ const PostsCard = ({ posts }) => {
 						return (
 							<div
 								key={post.id}
-								className="bg-[#285C4D] p-5 rounded-lg m-4 lg:w-[40vw] w-[80vw]"
+								className="bg-[#285C4D] p-5 rounded-lg m-4 lg:w-[40vw] w-[80vw] shadow-md transition-shadow duration-300 hover:shadow-lg"
 							>
 								<div>Title: {post.title}</div>
 								<div>Body: {post.body}</div>
@@ -26,7 +26,7 @@ const PostsCard = ({ posts }) => {
 				</div>
 			) : (
 				<div>
-					<div>Cargando...</div>
+					<div className="mt-20 text-[#706f6f] font-semibold">Cargando...</div>
 				</div>
 			)}
 		</div>

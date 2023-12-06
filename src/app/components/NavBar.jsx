@@ -11,14 +11,14 @@ const NavBar = () => {
 	const { categoryList, updateCategories } = useCategories();
 
 	return (
-		<div className="bg-[#56242A] absolute w-[20%] h-[100%] text-white">
+		<div className="bg-[#56242A] absolute w-[20%] h-[100%] text-white select-none">
 			<ul className="flex flex-col items-center h-full">
 				<ul className="mt-10 space-y-4">
 					<li className="flex">
 						<div className=" mr-2">
 							<HomeIcon />
 						</div>
-						<div>
+						<div className="transition-colors duration-300 hover:text-[#B38E5D]">
 							<Link href="/">Home</Link>
 						</div>
 					</li>
@@ -27,30 +27,35 @@ const NavBar = () => {
 					{categoryList.map((cat, index) => {
 						const categoryUrl = `/${encodeURIComponent(cat)}`; // Encode the category name
 						return (
-							<div key={index}>
+							<div
+								key={index}
+								className="transition-colors duration-300 hover:text-[#B38E5D]"
+							>
 								<a href={categoryUrl}>{cat}</a>
 							</div>
 						);
 					})}
 				</ul>
 				{session ? (
-					<ul className="flex flex-col ml-[5vw] h-full justify-end mb-4">
+					<ul className="flex flex-col ml-[2vw] h-[100vh] justify-end mb-4">
 						<li>Usuario:</li>
 						<li className="mb-3">{session.user.email}</li>
-						<li className="bg-red-300 h-14 w-32 rounded-lg text-center mb-3 p-4">
+						<li className="bg-[#9D2449] h-14 w-32 rounded-lg text-center mb-3 p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
 							<Link href="/dashboard">Dashboard</Link>
 						</li>
 						<button
-							className="bg-red-300 h-14 w-32 rounded-lg"
+							className="bg-[#9D2449] h-14 w-32 rounded-lg transition-colors duration-300 hover:bg-[#B38E5D]"
 							onClick={() => signOut()}
 						>
 							Logout
 						</button>
 					</ul>
 				) : (
-					<div className="flex flex-col h-full items-center justify-end space-y-3 mb-4">
-						<Link href="/signin">Login</Link>
-					</div>
+					<ul className="h-full flex justify-end place-items-end">
+						<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg text-center items-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
+							<Link href="/signin">Login</Link>
+						</li>
+					</ul>
 				)}
 			</ul>
 		</div>

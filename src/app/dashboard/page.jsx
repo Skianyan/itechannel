@@ -72,8 +72,8 @@ export default function Dashboard() {
 	//<div className="">{session?.data?.user?.email}</div>
 	return (
 		<div className="flex flex-col lg:flex-row items-stretch justify-between">
-			<div className="w-full flex flex-col bg-slate-600 text-white h-[95vh]  text-center justify-center">
-				<div className="bg-slate-700 self-center justify-center p-4 rounded-lg">
+			<div className="w-full flex flex-col bg-[#f8f9fa] text-white lg:h-[100vh] h-[95vh]  text-center justify-center">
+				<div className="bg-[#56242A] self-center justify-center p-4 rounded-lg">
 					<div>Registrar nuevo Anuncio</div>
 					<div className="flex flex-col self-center w-80 m-4">
 						<div>Titulo del Anuncio</div>
