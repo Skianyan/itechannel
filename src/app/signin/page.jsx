@@ -3,10 +3,17 @@ import { sendSignInLinkToEmail } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { auth } from "../firebase";
+import Modal from "../components/Modal";
 
-export default function Signin() {
+export default function Signin({ searchParams }) {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const show = searchParams?.show;
+  const modalText = {
+    title: "Accediendo",
+    body: "Se ha enviado un email a su correo"
+  }
 
   const actionCodeSettings = {
     // URL you want to redirect back to. The domain (www.example.com) for this
@@ -17,6 +24,7 @@ export default function Signin() {
   };
 
   const signIn = () => {
+    setLoading(true);
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
       .then(() => {
         window.localStorage.setItem("emailForSignIn", email);
@@ -70,6 +78,7 @@ export default function Signin() {
               >
                 Iniciar Sesión
               </button>
+              { loading && <Modal data={modalText}/> }
             </div>
           </div>
 
