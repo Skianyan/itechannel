@@ -13,26 +13,28 @@ const NavBar = () => {
 	return (
 		<div className="bg-[#56242A] absolute w-[20%] h-[100%] text-white select-none">
 			<ul className="flex flex-col items-center h-full">
-				<ul className="mt-10 space-y-4">
-					<li className="flex">
-						<div className=" mr-2">
-							<HomeIcon />
-						</div>
-						<div className="transition-colors duration-300 hover:text-[#B38E5D]">
-							<Link href="/">Home</Link>
-						</div>
-					</li>
-					<li className="space-x-2 flex text-aling font-bold">Secciones</li>
-					<hr className="mt-5 w-40" />
+				<ul className="mt-10 ">
+					<Link href="/">
+						<li className="flex p-1 mb-4 transition-colors duration-300 hover:bg-black hover:text-[#B38E5D] rounded-lg">
+							<div className=" mr-2">
+								<HomeIcon />
+							</div>
+							<div className="font-bold text-lg">Inicio</div>
+						</li>
+					</Link>
+
+					<li className="flex m-2 font-bold">Secciones</li>
+					<hr className="my-4 w-40" />
 					{categoryList.map((cat, index) => {
 						const categoryUrl = `/${encodeURIComponent(cat)}`; // Encode the category name
 						return (
-							<div
+							<a
 								key={index}
-								className="transition-colors duration-300 hover:text-[#B38E5D]"
+								className="justify-items-center transition-colors p-2 duration-300 hover:text-[#B38E5D] hover:bg-black hover:underline flex flex-col rounded-lg"
+								href={categoryUrl}
 							>
-								<a href={categoryUrl}>{cat}</a>
-							</div>
+								{cat}
+							</a>
 						);
 					})}
 				</ul>

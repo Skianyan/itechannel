@@ -51,37 +51,39 @@ const Menu = () => {
 					leaveTo="opacity-0"
 				>
 					<Popover.Panel className="bg-[#56242A] absolute w-[70vw] h-[95vh] rounded-lg p-6 z-50">
-						<ul className="text-white space-y-5 h-full w-[50%] flex flex-col justify-center">
-							<li className="space-x-2 flex "></li>
-							<li>
-								<div>
-									<Link
-										href={"/"}
-										onClick={() => setIsShowing((isShowing) => !isShowing)}
-									>
-										<HomeIcon /> Home
-									</Link>
-								</div>
-							</li>
-							<li className="space-x-2 flex text-aling font-bold">Secciones</li>
-							<hr className="mt-5 w-40" />
+						<ul className="text-white h-full w-[50%] flex flex-col justify-center">
+							<li className="flex "></li>
+							<Link href="/">
+								<li className="flex p-1 mb-4 transition-colors duration-300 hover:bg-black hover:text-[#B38E5D] rounded-lg">
+									<div className=" mr-2">
+										<HomeIcon />
+									</div>
+									<div className="font-bold text-lg">Inicio</div>
+								</li>
+							</Link>
+							<li className="flex m-2 font-bold">Secciones</li>
+							<hr className="my-4 w-40" />
 							{categoryList.map((cat, index) => {
 								const categoryUrl = `/${encodeURIComponent(cat)}`; // Encode the category name
 								return (
-									<li key={index}>
-										<a href={categoryUrl}>{cat}</a>
-									</li>
+									<a
+										key={index}
+										className="justify-items-center transition-colors p-2 duration-300 hover:text-[#B38E5D] hover:bg-black hover:underline flex flex-col rounded-lg"
+										href={categoryUrl}
+									>
+										{cat}
+									</a>
 								);
 							})}
 							{session ? (
-								<ul className="flex flex-col h-full justify-end mb-4">
+								<ul className="flex flex-col h-full justify-end">
 									<li>Usuario:</li>
 									<li className="mb-3">{session.user.email}</li>
 									<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg  text-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
 										<Link href="/dashboard">Dashboard</Link>
 									</li>
 									<button
-										className="bg-[#9D2449] mb-3 h-14 w-32 rounded-lg transition-colors duration-300 hover:bg-[#B38E5D]"
+										className="bg-[#9D2449] h-14 w-32 rounded-lg transition-colors duration-300 hover:bg-[#B38E5D]"
 										onClick={() => signOut()}
 									>
 										Logout
@@ -89,7 +91,7 @@ const Menu = () => {
 								</ul>
 							) : (
 								<ul className="h-full flex justify-end place-items-end">
-									<li className="bg-[#9D2449] h-14 w-32 mb-3 rounded-lg text-center items-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
+									<li className="bg-[#9D2449] h-14 w-32 rounded-lg text-center items-center p-4 transition-colors duration-300 hover:bg-[#B38E5D]">
 										<Link href="/signin">Login</Link>
 									</li>
 								</ul>

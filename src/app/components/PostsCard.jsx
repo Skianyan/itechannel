@@ -9,17 +9,18 @@ const PostsCard = ({ posts }) => {
 	return (
 		<div>
 			{posts.length > 0 ? (
-				<div className="lg:w-full w-[95vw] flex flex-col justify-center items-center">
+				<div className="lg:w-full w-[100vw] flex flex-col justify-center items-center">
 					{posts.map((post) => {
 						return (
 							<div
 								key={post.id}
-								className="bg-[#285C4D] p-6 rounded-lg m-4 w-[40vw] "
+								className="bg-[#285C4D] p-6 rounded-lg m-4 w-[80vw] lg:w-[40vw] "
 							>
-								<div className=" text-right m-0 text-sm font-mono mb-1">{post.date}</div>
+								<div className=" text-right m-0 text-sm font-mono mb-1">
+									{post.date}
+								</div>
 								<div className=" text-left font-bold mb-2">{post.title}</div>
 								<div className=" text-left font-thin mb-2">{post.body}</div>
-								
 							</div>
 						);
 					})}
