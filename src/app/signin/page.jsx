@@ -5,19 +5,18 @@ import { useState } from "react";
 import { auth } from "../firebase";
 import Modal from "../components/Modal";
 
-export default function Signin({ searchParams }) {
+export default function Signin() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const router = useRouter();
-  const show = searchParams?.show;
   const modalText = {
     title: "Accediendo",
-    body: "Se ha enviado un email a su correo",
+    body: "Se ha enviado un correo",
   };
   const modalEmailError = {
     title: "Error",
-    body: "Introduce un email valido",
+    body: "Introduce un correo valido",
   };
 
   const actionCodeSettings = {
@@ -28,14 +27,19 @@ export default function Signin({ searchParams }) {
     handleCodeInApp: true,
   };
 
-  const signIn = () => {
+  const closeModal = () => {
+	setError(false);
+    setLoading(false);
+    router.replace("/signin");
+  };
+  const signIn = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError(true);
       return;
     }
     setLoading(true);
-    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    await sendSignInLinkToEmail(auth, email, actionCodeSettings)
       .then(() => {
         window.localStorage.setItem("emailForSignIn", email);
         // ...
@@ -90,7 +94,11 @@ export default function Signin({ searchParams }) {
               >
                 Iniciar Sesión
               </button>
-              {error ? (<Modal data={modalEmailError}/>) : (loading && <Modal data={modalText} />)}
+              {error ? (
+                <Modal data={modalEmailError} onClose={closeModal} />
+              ) : (
+                loading && <Modal data={modalText} onClose={closeModal} />
+              )}
             </div>
           </div>
 
