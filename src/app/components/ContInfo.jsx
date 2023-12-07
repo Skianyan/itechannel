@@ -6,7 +6,7 @@ const ContInfo = () => {
 		<div className="w-full flex-col lg:flex bg-[#D4C19C] lg:text-white text-black  h-full ">
 			<div className="bg-white mt-9 h-[25%] m-5  rounded-lg mr-[5vw] ">
 				<div className="w-full h-full flex items-center justify-center">
-					<Image src="" width={210} height={100} alt="logo" />
+					<Image src="/albatros.jpg" width={210} height={100} alt="logo" />
 				</div>
 			</div>
 
